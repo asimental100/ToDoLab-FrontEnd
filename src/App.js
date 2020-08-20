@@ -1,10 +1,5 @@
 import React, { Component } from 'react'
-import {
-    BrowserRouter as Router, 
-    Route, 
-    Switch,
-    Link,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import Todos from './Todos.js';
 import Login from './Login.js'
 import SignUp from './SignUp.js'
@@ -23,11 +18,13 @@ export default class App extends Component {
       <div>
         <Router>
           <ul>
-            { this.state.token && <div>welcome, user!!!</div> }
-            { this.state.token && <Link to="/todos"><div>todos</div></Link> }
+            { this.state.token && <h1 className='welcome'>Welcome, User!</h1> }
+            <div className='links'>
+            { this.state.token && <Link to="/todos"><div>Todos</div></Link> }
             <Link to="/login"><div>log in</div></Link>
             <Link to="/signup"><div>sign up</div></Link>
             <button onClick={() =>this.handleTokenChange('')}>logout</button>
+            </div>
           </ul>
           <Switch>
             <Route exact path='/login' render={(routerProps) => <Login 

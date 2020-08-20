@@ -21,18 +21,18 @@ export default class LogIn extends Component {
     render() {
         return (
             <div>
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit} className='form'>
                 <label>
-                    email
-                    <input onChange={(e) => this.setState({ email: e.target.value })} value={this.state.email} />
+                    Email:
+                    <input required onChange={(e) => this.setState({ email: e.target.value })} value={this.state.email} />
                 </label>
                 <br/>
                 <label>
-                    password
-                    <input onChange={(e) => this.setState({ password: e.target.value })} value={this.state.password} />
+                    Password:
+                    <input required onChange={(e) => this.setState({ password: e.target.value })} value={this.state.password} />
                 </label>
                 <br/>
-                <button>log in</button>
+                <button>Log In</button>
             </form>
             </div>
         )

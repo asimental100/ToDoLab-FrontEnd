@@ -4,6 +4,7 @@ export default class SignUp extends Component {
     state = {
         email: '',
         password: '',
+        chores: []
     }
 
     handleSubmit = (e) => {
@@ -21,18 +22,18 @@ export default class SignUp extends Component {
     render() {
         return (
             <div>
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit} className='form'>
                 <label>
-                    email
-                    <input onChange={(e) => this.setState({ email: e.target.value })} value={this.state.email} />
+                    Email:
+                    <input required onChange={(e) => this.setState({ email: e.target.value })} value={this.state.email} />
                 </label>
                 <br/>
                 <label>
-                    password
-                    <input onChange={(e) => this.setState({ password: e.target.value })} value={this.state.password} />
+                    Password:
+                    <input required onChange={(e) => this.setState({ password: e.target.value })} value={this.state.password} />
                 </label>
                 <br/>
-                <button>sign up</button>
+                <button>Sign Up</button>
             </form>
             </div>
         )
