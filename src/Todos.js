@@ -38,13 +38,6 @@ export default class App extends Component {
     newTodo: ''
   }
 
-  componentDidMount() {
-    console.log('=============================\n')
-    console.log('|| this.props.token', this.props.token)
-    console.log('\n=============================')
-    // IRL: use the token to /GET fetch todos and put them in state
-  }
-
   getClassName = (task) => {
     if (task.todo === 'wash dog' &&  task.completed) return 'doggy complete'; 
     if (task.todo === 'wash dog' &&  !task.completed) return 'doggy incomplete';   
